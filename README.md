@@ -27,3 +27,8 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+#GJ
+### Hosted by Netlify:
+https://brave-wiles-ab8acb.netlify.com/
