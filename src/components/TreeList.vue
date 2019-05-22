@@ -118,54 +118,12 @@
                 if (!this.node.employees) {
                     return false;
                 }
-                /* 1ST ATTEMPT:
+
                 var sum = 0;
                 this.node.employees.forEach(e => {
                     sum += e.length;
                 });
-                return sum;
-                */
-
-                /* REDUCE METHOD:
-                return this.node.reduce((total, item) => {
-                    return item.reduce((total, item) => {
-                        return total + item.count;
-                    }, total);
-                }, 0);
-                */
-
-                /* CALCULATE WITH RECURSIVE CALL:
-                const calculateTotal = (collection, total) => {
-                    const subTotal = total + collection.length;
-                    if (!collection.children) {
-                        return subTotal;
-                    }
-
-                    return calculateTotal(collection.children, subTotal);
-                }
-
-                calculateTotal(this.exampleCollection, 0);
-                /*
-
-                /* REDUCE METHOD SIMPLE:
-                this.node.reduce((total, item) => {
-                    return total + item.employees.length;
-                }, 0);
-                */
-
-                /* COUNT:
-                let collectionCount = (total, item) => {
-                    const subTotal = (total + 1);
-                    if (!item.node) {
-                        return subTotal;
-                    }
-
-                    return item.node.reduce(collectionCount, subTotal);
-                }
-                return collectionCount;
-                */
-
-                return 5;
+                return sum.toString();
             },
 
             /**
