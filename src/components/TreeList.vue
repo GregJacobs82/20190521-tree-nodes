@@ -124,6 +124,39 @@
                     sum += e.length;
                 });
                 return sum.toString();
+
+                /***********************/
+                /*** OTHER ATTEMPTS: ***/
+                /***********************/
+                /* REDUCE METHOD:
+                return this.node.reduce((total, item) => {
+                    return item.reduce((total, item) => {
+                        return total + item.count;
+                    }, total);
+                }, 0);
+                */
+
+                /* CALCULATE WITH RECURSIVE CALL:
+                const calculateTotal = (collection, total) => {
+                    const subTotal = total + collection.length;
+                    if (!collection.children) {
+                        return subTotal;
+                    }
+                    return calculateTotal(collection.children, subTotal);
+                }
+                calculateTotal(this.exampleCollection, 0);
+                /*
+
+                /* COUNT:
+                let collectionCount = (total, item) => {
+                    const subTotal = (total + 1);
+                    if (!item.node) {
+                        return subTotal;
+                    }
+                    return item.node.reduce(collectionCount, subTotal);
+                }
+                return collectionCount;
+                */
             },
 
             /**
