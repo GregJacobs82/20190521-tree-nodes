@@ -1,5 +1,6 @@
 <template>
-    <div class="home">
+    <div class="home" :class="{ 'small':isSmall }">
+        <button @click.prevent="toggleIsSmall">Toggle Size</button>
         <Tree :collection="collection"/>
     </div>
 </template>
@@ -14,6 +15,7 @@
         },
         data () {
             return {
+                isSmall: true,
                 collection: {
                     id: 0,
                     team: "First Team",
@@ -197,11 +199,21 @@
                     ]
                 },
             }
+        },
+        methods: {
+            toggleIsSmall () {
+                this.isSmall = !this.isSmall;
+            }
         }
     }
 </script>
 <style lang="scss" scoped>
     .home {
-        font-size: 10px; // NOTE: Adjust this to scale the overall node tree size
+        &.small {
+            font-size: 10px; // NOTE: Adjust this to scale the overall node tree size
+        }
+        button {
+            margin-bottom: 4em;
+        }
     }
 </style>
