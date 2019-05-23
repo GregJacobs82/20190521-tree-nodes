@@ -217,9 +217,6 @@
             }
         },
         methods: {
-            toggleIsSmall () {
-                this.isSmall = !this.isSmall;
-            },
             sizeUp () {
                 if (this.fontSize < 99) {
                     this.fontSize++;
@@ -231,15 +228,6 @@
                 }
             },
         },
-        computed: {
-
-            cancelButtonClass() {
-                return [
-                    ...this.buttonClasses,
-                    `btn-${this.cancelVariant}`,
-                ];
-            },
-        }
     }
 </script>
 <style lang="scss" scoped>
