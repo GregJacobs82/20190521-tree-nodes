@@ -1,5 +1,5 @@
 <template>
-    <div class="home" :style="{ fontSize: fontSize + 'px' }">
+    <div class="home" :style="{ fontSize: (fontSize * .1) + 'rem' }">
         <div class="flex-center">
             <label>Size</label>
             <div class="input-group mb-3">
@@ -223,7 +223,7 @@
                 }
             },
             sizeDown () {
-                if (this.fontSize >= 5) {
+                if (this.fontSize >= 8) {
                     this.fontSize--;
                 }
             },
